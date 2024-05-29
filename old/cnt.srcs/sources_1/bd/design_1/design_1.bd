@@ -1,0 +1,176 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xA6E733DB743B39B4",
+      "device": "xc7z020clg484-1",
+      "name": "design_1",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2018.3",
+      "validated": "true"
+    },
+    "design_tree": {
+      "cnt_0": "",
+      "ila_0": ""
+    },
+    "ports": {
+      "cnt_val_out": {
+        "direction": "O",
+        "left": "3",
+        "right": "0"
+      },
+      "clk_in": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "ASSOCIATED_RESET": {
+            "value": "reset_n_in",
+            "value_src": "default"
+          },
+          "CLK_DOMAIN": {
+            "value": "design_1_clk_in",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          }
+        }
+      },
+      "and_out": {
+        "direction": "O"
+      },
+      "btn": {
+        "direction": "I",
+        "left": "1",
+        "right": "0"
+      },
+      "reset_n_in": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
+      }
+    },
+    "components": {
+      "cnt_0": {
+        "vlnv": "xilinx.com:module_ref:cnt:1.0",
+        "xci_name": "design_1_cnt_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "cnt",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "reset",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_1_clk_in",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "user_prop"
+              }
+            }
+          },
+          "btn": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "and_out": {
+            "direction": "O"
+          },
+          "cnt_val": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "null_port": {
+            "direction": "O"
+          },
+          "high_port": {
+            "direction": "O"
+          }
+        }
+      },
+      "ila_0": {
+        "vlnv": "xilinx.com:ip:ila:6.2",
+        "xci_name": "design_1_ila_0_0",
+        "parameters": {
+          "C_ENABLE_ILA_AXI_MON": {
+            "value": "false"
+          },
+          "C_MONITOR_TYPE": {
+            "value": "Native"
+          },
+          "C_NUM_OF_PROBES": {
+            "value": "1"
+          },
+          "C_PROBE0_WIDTH": {
+            "value": "4"
+          }
+        }
+      }
+    },
+    "nets": {
+      "cnt_0_cnt_val": {
+        "ports": [
+          "cnt_0/cnt_val",
+          "cnt_val_out",
+          "ila_0/probe0"
+        ]
+      },
+      "Net": {
+        "ports": [
+          "clk_in",
+          "cnt_0/clk",
+          "ila_0/clk"
+        ]
+      },
+      "cnt_0_and_out": {
+        "ports": [
+          "cnt_0/and_out",
+          "and_out"
+        ]
+      },
+      "btn_1": {
+        "ports": [
+          "btn",
+          "cnt_0/btn"
+        ]
+      },
+      "reset_n_in_1": {
+        "ports": [
+          "reset_n_in",
+          "cnt_0/reset"
+        ]
+      }
+    }
+  }
+}
